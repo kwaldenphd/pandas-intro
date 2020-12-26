@@ -385,14 +385,212 @@ frame3
 
 As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`.
 
+For this section of the lab, we're going to work with data about *Titanic* passengers.
+
+Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic.csv in a web browser to see the dataset.
+
+We can load structured data into Python from a file located on our computer or from a URL, using `pd.read_csv()`.
+```Python
+# import pandas
+import pandas as pd
+
+# load titanic data from csv file
+titanic_file = pd.read_csv("titanic.csv")
+
+# show first 5 rows of newly-loaded dataframe
+titanic_file.head(5)
+
+# load titanic data from url
+titanic = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic.csv)
+
+# show first 5 rows of newly-loaded dataframe
+titanic.head(5)
+```
+
+`pandas` provides the `read_csv()` function which stores `.csv` data as a `pandas` `DataFrame`.
+
+This `read_` prefix can be used with other structured data file formats, as we'll explore with JSON later.
+
+Other parsing functions in `pandas`:
+- `read_fwf`: fixed-width data with no delimiter
+- `read_clipboard`: reads in data from clipboard
+- `read_excel`: reads in data from `.xls` or `.xlsx` files
+- `read_html`: reads in any tables contained in an HTML document
+- `read_json`: reads in JSON data
+- `read_sql`: reads in results of an SQL query as a pandas dataframe
+- `read_sas`: reads in SAS dataset
+- `read_stata`: reads in Stata file format
+
+To check the first and last five rows of the `titanic` data frame:
+```Python
+titanic
+```
+
+We can also check the data type for each column using `.dtypes`.
+```Python
+titanic.dtypes
+```
+
+From this output, we know we have integers (`int64`), floats (`float64`), and strings (`object`).
+
+Maybe we want a more technical summary of this `DataFrame`.
+```Python
+titanic.info()
+```
+
+`.info()` returns row numbers, the number of entries, column names, column data types, and the number of non-null values in each column. 
+
+We can see from the `Non-Null Count` values that some columns do have null or missing values.
+
+`.info()` also tells us how much memory (RAM) is used to store this `DataFrame`.
+
+Let's go through these same steps with JSON data scraped from Twitter.
+
+To learn more about scraping Twitter data with Python, [visit the `twarc` package documentation](https://github.com/DocNow/twarc).
+
+```Python
+import pandas as pd
+
+# load data from JSON file
+ND_Twitter_file = read_json("ND_Twitter.json")
+
+# show first and last five  rows of new data frame
+ND_Twitter_file
+
+# load data from url
+ND_Twitter = read_json("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/ND_Twitter.json")
+
+# show first and last five rows 
+ND_Twitter
+
+# check data type
+ND_Twitter.dtypes
+
+# check technical summary
+ND_Twitter.info()
+```
 
 
+In the titanic data example, the `read` operation was fairly straightforward. 
 
-Once within Pandas
+The data being loaded contained headers and was formatted in a way we would expect for a `.csv` file.
 
-How we could do SQL-like things with query/join/filter/etc within pandas
+But in many situations, data being loaded to a `DataFrame` will not conform to these formatting conventions.
 
-Where do we go from here
+Let's say we have a file that does not include a header row.
+
+`pandas` can assign default column names, or you can set them manually.
+
+The `titanic_no_header` file contains the same original data with the first row of column names removed.
+
+```Python
+# import pandas 
+import pandas as pd
+
+# load headless titanic data
+headless_titanic_default = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic_no_header.csv", header=None)
+
+# shows us the default column names assigned by pandas
+headless_titanic_default
+
+# load headless titanic data and manually assign column names
+headless_titanic = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic_no_header.csv", names=['PassengerID', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare' ,'Cabin', 'Embarked'])
+
+# shows data frame with manually assigned column names
+headless_titanic
+```
+
+Let's say you have a `.txt` file that does not incldue a character delimiter.
+
+`titanic.txt` is the same titanic data this time as tab-delimited values.
+
+We would need to specify how `pandas` should parse this data as rows and columns.
+
+```Python
+# import pandas
+import pandas as pd
+
+# load titanic txt data
+titanic_txt = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic.txt", sep="\t")
+
+# shows first and last five rows of data frame
+titanic_txt
+```
+
+We can also run into situations where the data we are loading into Python has missing values.
+
+Just trying to load a file with missing data will return error messages.
+
+We can specify what characters representing missing data when we create the `DataFrame`.
+
+```Python
+# import pandas
+import pandas as pd
+
+# load data where missing values are represented by NA or Null
+sample = pd.read_csv("file_name.csv", na_values=['NA', 'Null'])
+
+# for a situation where missing values in one column are represented by NA and another column's missing data are represented by Null
+# first step is to create a dictionary for these column names and null values
+null_symbols = {'column1': ['NA'], 'column2': ['Null']}
+
+# load data where with column-specific missing values
+sample2 = pd.read_csv("file_2_name.csv", na_values=null_symbols)
+```
+
+`pd.read_csv` includes other function arguments that can help with other common data formatting issues.
+
+Argument | Description
+--- | ---
+`sep` or `delimiter` | Specifies the character sequence or regular expression used as a separator or delimiter
+`header` | Specifies the row number to use as column names; `0` is default (does not need to be specified); `header=None` if no header
+`index_col` | Specifies the column numbers or names to use as row index 
+`names` | Specifies list of column names for result
+`skiprows` | Row numbers (starting at 0) for rows to skip
+`na_values` | Sequence of characters that represent missing or NA data
+`comment` | Characters used to mark or split off comments that occur at end of lines of data
+`parse_dates` | Specifies how date and time data will be parsed; `False` by default; `True` will attempt to parse all columns as `datetime` format; can also apply to select columns
+`dayfirst` | Specifies international date format (DD/MM/YYYY); `False` by default
+`date_parser` | Function used to parse dates
+`nrows` | Number of rows to read starting at the beginning of the file; especially helpful when only needing part of a large file
+`skip_footer` | Number of lines to ignore at the end of the file
+`encoding` | Specifies encoding schema
+`thousands` | Specifies `,` or `.` separater for thousands
+
+Other elements of `.csv` dialect we might encounter when loading a file to a `DataFrame`:
+
+Argument | Description
+--- | ---
+`delimiter` | One character string used to separate fields; default is `,`
+`quotechar` | Quote character for fields with specific characters or fields that inclde the delimiter character
+`skippinitialspace` | Instructs program to ignore whitespace after delimiter; default is `False`
+`doublequote` | Specifies how to handle quoting character within a field
+`escapechar` | Specifies the string used to escape the delimiter character if `quoting` is set to `QUOTE_NONE`
+
+### From `DataFrame` to data file
+
+Let's say we have data in a `DataFrame` and want to write that to a file.
+
+While `.read_` loads data, `.to_` writes data.
+
+To save the titanic data as an Excel file:
+```Python
+titanic.to_excel("titanic.xlsx", sheet_name="passengers", index=False)
+```
+
+In this example, we create a new Excel file with a single sheet (`passengers`) that stores the data from our `titanic` `DataFrame`.
+
+`index=False` means that row index labels are not included in the new spreadsheet.
+
+We could load back in the new Excel file and write it to a `.csv` file, dropping the header row:
+```Python
+
+# load Excel file as dataframe
+titanic_excel = pd.read_excel("titanic.xlsx", sheet_name="passengers")
+
+# write dataframe to CSV file with no header
+titanic_excel.to_csv("titanic_no_head.csv", header=False)
+```
 
 # Practice Problems
 
