@@ -387,7 +387,7 @@ As mentioned earlier in this lab, it's far more likely that you will load struct
 
 For this section of the lab, we're going to work with data about *Titanic* passengers.
 
-Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic.csv in a web browser to see the dataset.
+Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.csv in a web browser to see the dataset.
 
 We can load structured data into Python from a file located on our computer or from a URL, using `pd.read_csv()`.
 ```Python
@@ -458,7 +458,7 @@ ND_Twitter_file = read_json("ND_Twitter.json")
 ND_Twitter_file
 
 # load data from url
-ND_Twitter = read_json("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/ND_Twitter.json")
+ND_Twitter = read_json("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/ND_Twitter.json")
 
 # show first and last five rows 
 ND_Twitter
@@ -488,13 +488,13 @@ The `titanic_no_header` file contains the same original data with the first row 
 import pandas as pd
 
 # load headless titanic data
-headless_titanic_default = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic_no_header.csv", header=None)
+headless_titanic_default = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic_no_header.csv", header=None)
 
 # shows us the default column names assigned by pandas
 headless_titanic_default
 
 # load headless titanic data and manually assign column names
-headless_titanic = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic_no_header.csv", names=['PassengerID', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare' ,'Cabin', 'Embarked'])
+headless_titanic = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic_no_header.csv", names=['PassengerID', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare' ,'Cabin', 'Embarked'])
 
 # shows data frame with manually assigned column names
 headless_titanic
@@ -511,7 +511,7 @@ We would need to specify how `pandas` should parse this data as rows and columns
 import pandas as pd
 
 # load titanic txt data
-titanic_txt = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic.txt", sep="\t")
+titanic_txt = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.txt", sep="\t")
 
 # shows first and last five rows of data frame
 titanic_txt
