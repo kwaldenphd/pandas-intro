@@ -7,6 +7,14 @@ This tutorial is licensed under a <a href="http://creativecommons.org/licenses/b
 
 ## Acknowledgements
 
+Adapted from `pandas` package ["Getting started"](https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/) documentation.
+
+Also Wes McKinney Python for Data Analysis chapters
+Chapter 5 "Getting Started with pandas" (125-168)
+Chapter 7 "Data Cleaning and Preparation" (195-224)
+Chapter 8 "Data Wrangling: Join, Combine, and Reshape" (225-256)
+Chapter 10 "Data Aggregation and Group Operations" (293-322)
+
 # Table of Contents
 
 # What do we mean by pandas
