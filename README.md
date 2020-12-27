@@ -772,9 +772,83 @@ A few key takeaways:
 - Select specific rows and/or columns usign `iloc` when working with index positions
 - You can assign new values to selection using `loc` or `iloc`
 
+## Removing Duplicates
+
+A useful place to start is identifying and removing any duplicate rows in a dataframe.
+
+We can do this using a few key functions.
+
+`.duplicated()` will return a `True` or `False` value indicating if a row is a duplicate of a previously occuring row.
+```Python
+data_frame.duplicated()
+```
+
+`.drop_duplicates()` will return a dataframe containing only rows that are not duplicated.
+```Python
+new_data_frame = old_data_frame.drop_duplicates()
+```
+
+## Handling Missing Data
+
+### `.dropna()`
+
+As mentioned previously, we can specify how `pandas` handles missing data, with arguments like `dropna`, `isnull`, and `notnull`.
+
+We can specify how `pandas` handles missing values when working with a data frame object.
+
+To drop any row containing a missing value:
+```Python
+no_na = data_frame.dropna()
+```
+
+To drop any column containing a missing value, we can specify the axis:
+```Python
+no_na_columns = data_frame.dropna(axis=1, how='all')
+```
+### `.fillna`
+
+But we can imagine a scenario in which you don't want to filter out missing data.
+
+The `.fillna()` function will replace missing data with a specified value.
+
+The default function will replace all missing data in the dataframe:
+```Python
+# replaces all missing data with 0
+df.fillna(0)
+```
+
+But we can also specify a different missing fill value for specific columns using a dictionary.
+```Python
+# replace missing data in column 1 with 0.5 value and in column 2 with 0
+df.fillna({1: 0.5, 2: 0})
+```
+
+In these examples, `.fillna()` returns a new object, but we can also modify the existing object in-place by setting `inplace` to `True`.
+```Python
+# modify existing object in-place
+df.fillna(0, inplace=True)
+```
+
+We can also copy (or propogate) the last valid observation into missing data using specific methods that go along with `.fillna()`.
+
+Fill Forward (`ffill`) will take the "last known value" and apply it to missing data entries, until you hit the next non-null observation in the data frame.
+
+Back Fill (`bfill`) goes the other direction, starting from the last row in the dataset. The "last known value" is applied to missing data entries until you hit the next non-null observation.
+
+To use forward fill on all missing values in a dataframe:
+```Python
+df.fillna(method='ffill')
+```
+
+To use back fill on all missing values in a dataframe:
+```Python
+df.fillna(method='bfill')
+```
 
 # Practice Problems
 
-
+Something related to final project
 
 # Lab Notebook Questions
+
+Whatever questions are here + something related to final project
