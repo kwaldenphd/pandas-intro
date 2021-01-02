@@ -38,53 +38,53 @@ Information and exercises in this lab are adapted from the following resources:
 
 # What do we mean by pandas
 
-Some of you may be wondering why we are talking about pandas in a computer science course.
+1. Some of you may be wondering why we are talking about pandas in a computer science course.
 
-What is a panda?
+2. What is a panda?
 
-Figure 1 or 2
+<p align="center"><a href="https://github.com/kwaldenphd/pandas-intro/blob/main/Figure_2.png?raw=true"><img class="aligncenter" src="https://github.com/kwaldenphd/pandas-intro/blob/main/Figure_2.png?raw=true" /></a></p>
 
-Panda: "a large black-and-white mammal (Ailuropoda melanoleuca) of chiefly central China that feeds primarily on bamboo shoots and is now usually classified with the bears (family Ursidae)" ([Merriam-Webster](https://www.merriam-webster.com/dictionary/panda))
+3. Panda: "a large black-and-white mammal (Ailuropoda melanoleuca) of chiefly central China that feeds primarily on bamboo shoots and is now usually classified with the bears (family Ursidae)" ([Merriam-Webster](https://www.merriam-webster.com/dictionary/panda))
 
-Wait that's not right....
+4. Wait that's not right....
 
-`pandas`: "a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language" ([`pandas` documentation](https://pandas.pydata.org/))
+5. `pandas`: "a fast, powerful, flexible and easy to use open source data analysis and manipulation tool, built on top of the Python programming language" ([`pandas` documentation](https://pandas.pydata.org/))
 
-That makes more sense.
+6. That makes more sense.
 
-If you remember back to our earlier work with `.csv` files in Python, there are limitations to the kinds of things we can do with structured data using the `csv` module.
+7. If you remember back to our earlier work with `.csv` files in Python, there are limitations to the kinds of things we can do with structured data using the `csv` module.
 
-Particularly if we want to analyze and visualze structured data in a Python programming environment, we aren't going to get very far loading `csv` files as lists or dictionaries.
+8. Particularly if we want to analyze and visualze structured data in a Python programming environment, we aren't going to get very far loading `csv` files as lists or dictionaries.
 
-We need Python to understand or interact with structured data as structured data.
+9. We need Python to understand or interact with structured data as structured data.
 
-Enter `pandas`.
+10. Enter `pandas`.
 
-Software developers at AQR Capital Management began working on a Python-based tool (written in a combination of C and Python) for quantitative data analysis in 2008.
+11. Software developers at AQR Capital Management began working on a Python-based tool (written in a combination of C and Python) for quantitative data analysis in 2008.
 
-The initial open-source version of `pandas` was released in 2008.
+12. The initial open-source version of `pandas` was released in 2008.
 
-At its core, "`pandas` is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series" ([Wikipedia](https://en.wikipedia.org/wiki/Pandas_(software)).
+13. At its core, "`pandas` is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series" ([Wikipedia](https://en.wikipedia.org/wiki/Pandas_(software)).
 
-The name `pandas` is derived from "panel data," an econometrics term used to describe particular types of datasets.
+14. The name `pandas` is derived from "panel data," an econometrics term used to describe particular types of datasets.
 
-The name `pandas` is also a play on "Python data analysis."
+15. The name `pandas` is also a play on "Python data analysis."
 
-For more on the history and origins of `pandas`, check out Wes McKinney's "[pandas: a Foundational Python Library for Data Analysis and Statistics]"(https://www.dlr.de/sc/Portaldata/15/Resources/dokumente/pyhpc2011/submissions/pyhpc2011_submission_9.pdf) 2011 paper.
+16. For more on the history and origins of `pandas`, check out Wes McKinney's ["pandas: a Foundational Python Library for Data Analysis and Statistics"](https://www.dlr.de/sc/Portaldata/15/Resources/dokumente/pyhpc2011/submissions/pyhpc2011_submission_9.pdf) 2011 paper.
 
-`pandas` is based on and has some similarities with another Python package, `NumPy`.
+17. `pandas` is based on and has some similarities with another Python package, `NumPy`.
 
-According to [package documentation](https://numpy.org/doc/stable/user/whatisnumpy.html), "`NumPy` is the fundamental package for scientific computing in Python. It is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more."
+18. According to [package documentation](https://numpy.org/doc/stable/user/whatisnumpy.html), "`NumPy` is the fundamental package for scientific computing in Python. It is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more."
 
-In `NumPy`, data are stored as list-like objects called arrays. 
+19. In `NumPy`, data are stored as list-like objects called arrays. 
 
-`NumPy` allows users to access, split, reshape, join, etc. data stored in arrays.
+20. `NumPy` allows users to access, split, reshape, join, etc. data stored in arrays.
 
-`pandas` takes a similar approach to structured data, or data organized in a tabular (i.e. table-like) format.
+21. `pandas` takes a similar approach to structured data, or data organized in a tabular (i.e. table-like) format.
 
-"pandas adopts significant parts of NumPy's idiomatic style of array-based computing, especially array-based functions and a preference for data processing without for loops...the biggest difference is that pandas is designed for working with tabular or heterogeneous data. NumPy, by contrast, is best suited for working with homogenous numerical array data" (Wes McKinney, Chapter 5 "Getting Started with Pandas" in *Python for Data Analysis*, pg. 125)
+22. "pandas adopts significant parts of NumPy's idiomatic style of array-based computing, especially array-based functions and a preference for data processing without for loops...the biggest difference is that pandas is designed for working with tabular or heterogeneous data. NumPy, by contrast, is best suited for working with homogenous numerical array data" (Wes McKinney, Chapter 5 "Getting Started with Pandas" in *Python for Data Analysis*, pg. 125)
 
-For more on `NumPy`:
+23. For more on `NumPy`:
 - [NumPy website](https://numpy.org/)
 - [NumPy documentation](https://numpy.org/doc/stable/)
 - ["NumPy Introduction," W3Schools](https://www.w3schools.com/python/numpy_intro.asp)
@@ -92,13 +92,13 @@ For more on `NumPy`:
 
 # Data structures in `pandas`
 
-`pandas` has two main data structures: `Series` and `DataFrame`.
+24. `pandas` has two main data structures: `Series` and `DataFrame`.
 
 ## `Series`
 
-In `pandas`, "a `Series` is a one-dimensional, array-like object containing a sequence of values...and an associated array of data labels, called its index" (McKinney, 126).
+25. In `pandas`, "a `Series` is a one-dimensional, array-like object containing a sequence of values...and an associated array of data labels, called its index" (McKinney, 126).
 
-At first glance, a `Series` looks a lot like a Python list.
+26. At first glance, a `Series` looks a lot like a Python list.
 ```Python
 # import pandas package
 import pandas as pd
@@ -113,21 +113,21 @@ obj = pd.Series([4, 7, -5, 3])
 obc
 ```
 
-In this example, we imported the `pandas` package as well as the specific `Series` and `DataFrame` components of the module.
+27. In this example, we imported the `pandas` package as well as the specific `Series` and `DataFrame` components of the module.
 
-We created a `Series` object containing four integer values.
+28. We created a `Series` object containing four integer values.
 
-When working in `pandas`, most commands begin with `pd.`.
+29. When working in `pandas`, most commands begin with `pd.`.
 
-We could create a list with these values, but for data analysis we needed the functionality `pandas` provides for working with series.
+30. We could create a list with these values, but for data analysis we needed the functionality `pandas` provides for working with series.
 
-To verify `obj` is stored as an array-like object, we can use `obj.values` which should return `array([4, 7, -5, 3])`
+31. To verify `obj` is stored as an array-like object, we can use `obj.values` which should return `array([4, 7, -5, 3])`
 
-We can also get the index attributes for `obc` using `obj.index`, which should return `RangeIndex(start=0, stop=4, step=1)`.
+32. We can also get the index attributes for `obc` using `obj.index`, which should return `RangeIndex(start=0, stop=4, step=1)`.
 
-The default index attributes assigned to objects in an array are integers `0` through `N-1`, where `N` is the length of the data.
+33. The default index attributes assigned to objects in an array are integers `0` through `N-1`, where `N` is the length of the data.
 
-We can create our own index attributes for the data points by manually creating index labels.
+34. We can create our own index attributes for the data points by manually creating index labels.
 
 ```Python
 # create obj2 series with index attributes
@@ -137,7 +137,7 @@ obj2 = pd.Series([4, 7, -5, 3], index=['d', 'b', 'a', 'c'])
 obj2
 ```
 
-The index-value link lets us interact with a `Series` object similar to how we would work with Python dictionary key-value pairs.
+35. The index-value link lets us interact with a `Series` object similar to how we would work with Python dictionary key-value pairs.
 
 ```Python
 # access Series value using index label
@@ -162,7 +162,7 @@ obj2[['c', 'a', 'd']]
 # this returns the index-value pairs for the specified index labels
 ```
 
-We can also use Python's built-in arithmetic functionality for values in a `Series` object.
+36. We can also use Python's built-in arithmetic functionality for values in a `Series` object.
 
 ```Python
 # select values in the Series that meet a specific condition
@@ -185,11 +185,11 @@ np.exp(obj2)
 # returns exponent float values
 ```
 
-Try to perform similar mathematical operations on values stored in a Python dictionary or list and you'll run into all kinds of data type errors.
+37. Try to perform similar mathematical operations on values stored in a Python dictionary or list and you'll run into all kinds of data type errors.
 
-The `Series` object uses a similar data structure and opens up a wide range of analysis possibilities.
+38. The `Series` object uses a similar data structure and opens up a wide range of analysis possibilities.
 
-To create a `Series` from data in a Python dictionary:
+39. To create a `Series` from data in a Python dictionary:
 ```Python
 # create dictionary
 sdata = {'Ohio': 35000, 'Texas': 71000, 'Oregon': 16000, 'Utah': 5000}
@@ -198,9 +198,9 @@ sdata = {'Ohio': 35000, 'Texas': 71000, 'Oregon': 16000, 'Utah': 5000}
 obj3 = pd.Series(sdata)
 ```
 
-Let's say we wanted to have the `Series` values appear in a specific order.
+40. Let's say we wanted to have the `Series` values appear in a specific order.
 
-We can specify the index (or key) label order when converting a dictionary to a Series.
+41. We can specify the index (or key) label order when converting a dictionary to a Series.
 ```Python
 # create dictionary
 sdata = {'Ohio': 35000, 'Texas': 71000, 'Oregon': 16000, 'Utah': 5000}
@@ -215,15 +215,15 @@ obj4 = pd.Series(sdata, index=states)
 obj4
 ```
 
-A few things have happened here.
+42. A few things have happened here.
 
-The `California` index is returning `NaN` for its value, which is "not a number" or "NA".
+43. The `California` index is returning `NaN` for its value, which is "not a number" or "NA".
 
-The `Utah` value in `sdata` is not in the `obj4` series, because the idex label `Utah` was not in the manually assigned list of index values passed to the series through `index=true`.
+44. The `Utah` value in `sdata` is not in the `obj4` series, because the idex label `Utah` was not in the manually assigned list of index values passed to the series through `index=true`.
 
-We can use the `isnull()` or `notnull()` functions in `pandas` to detect missing data.
+45. We can use the `isnull()` or `notnull()` functions in `pandas` to detect missing data.
 
-These functions will return `TRUE` or `FALSE`.
+46. These functions will return `TRUE` or `FALSE`.
 
 ```Python
 # test for null values for each index label
@@ -239,7 +239,7 @@ pd.notnull(obj4)
 # output will be TRUE for all but California
 ```
 
-We can assign a name for our `Series` object and its index values using the `name` attribute.
+47. We can assign a name for our `Series` object and its index values using the `name` attribute.
 
 ```Python
 # assign name to Series object
@@ -252,23 +252,23 @@ obj4.index.name = 'state'
 obj4
 ```
 
-The output for `obj4` now reflects our newly-assigned `name` attribute values.
+48. The output for `obj4` now reflects our newly-assigned `name` attribute values.
 
 ## `DataFrame`
 
-While a `Series` object is a one-dimensional array, a `DataFrame` includes a tabular data structure "and contains an ordered collection of columns, each of which can be a different value type" (McKinney, 130).
+49. While a `Series` object is a one-dimensional array, a `DataFrame` includes a tabular data structure "and contains an ordered collection of columns, each of which can be a different value type" (McKinney, 130).
 
-A `pandas` `DataFrame` has a row and column index--we can think of these as Series that all share the same index.
+50. A `pandas` `DataFrame` has a row and column index--we can think of these as Series that all share the same index.
 
-Behold, a two-dimensional data structure. 
+51. Behold, a two-dimensional data structure. 
 
-In most situations, you'll create a `DataFrame` by reading in a structured data file.
+52. In most situations, you'll create a `DataFrame` by reading in a structured data file.
 
-But we're going to manually create a `DataFrame` to better understand how they work in `pandas`.
+53. But we're going to manually create a `DataFrame` to better understand how they work in `pandas`.
 
-Let's go back to our state population data example.
+54. Let's go back to our state population data example.
 
-Say we have two dictionaries that include equal-length lists:
+55. Say we have two dictionaries that include equal-length lists:
 ```Python
 # create dictionary with three equal-length lists
 data = {'state': [Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada', Nevada'], 
@@ -282,13 +282,13 @@ frame = pd.DataFrame(data)
 frame
 ```
 
-Behold, a two-dimensional `DataFrame` object with rows, columns, labels, and values.
+56. Behold, a two-dimensional `DataFrame` object with rows, columns, labels, and values.
 
-The first object from each of the lists in our `data` dictionary now populate the first row of our `frame` DataFrame.
+57. The first object from each of the lists in our `data` dictionary now populate the first row of our `frame` DataFrame.
 
-This pattern continues for subsequent rows.
+58. This pattern continues for subsequent rows.
 
-We can start to explore the dimensions or overall characteristics of our DataFrame:
+59. We can start to explore the dimensions or overall characteristics of our DataFrame:
 ```Python
 # shows index labels and values for first 5 rows
 frame.head(5)
@@ -300,7 +300,7 @@ frame.columns.values
 frame.describe()
 ```
 
-The last command `.describe()` returns some statistical information about values in our dataset, including:
+60. The last command `.describe()` returns some statistical information about values in our dataset, including:
 - count
 - mean
 - standard deviation
@@ -310,12 +310,12 @@ The last command `.describe()` returns some statistical information about values
 - 75th percentile
 - maximum
 
-Let's say we want to specify the column sequence or the order in which columns are arranged in the `DataFrame`:
+61. Let's say we want to specify the column sequence or the order in which columns are arranged in the `DataFrame`:
 ```Python
 pd.DataFrame(data, columns=['year', 'state', 'pop']
 ```
 
-What happens if we specify a column that isn't represented in the data passed to the `DataFrame`? 
+62. What happens if we specify a column that isn't represented in the data passed to the `DataFrame`? 
 ```Python
 # create new dataframe from data dictionary with specific columns and index labels
 frame2 = pd.DataFrame(data, columns=['year', 'state', 'pop', 'debt'], index=['one', 'two', 'three', 'four', 'five', 'six'])
@@ -324,23 +324,23 @@ frame2 = pd.DataFrame(data, columns=['year', 'state', 'pop', 'debt'], index=['on
 frame2
 ```
 
-We see only `NaN` missing values for the `debt` column since that column is not represented in the `data` dictionary used to create our `frame2` DataFrame.
+63. We see only `NaN` missing values for the `debt` column since that column is not represented in the `data` dictionary used to create our `frame2` DataFrame.
 
-We can select columns in our `DataFrame` using their index labels.
+64. We can select columns in our `DataFrame` using their index labels.
 ```Python
 frame2['state']
 
 # returns state column
 ```
 
-We can also select a column using the `name` attribute.
+65. We can also select a column using the `name` attribute.
 ```Python
 frame2.year
 
 # returns year column
 ```
 
-We can retrieve rows based on their position using the `loc` (location) attribute.
+66. We can retrieve rows based on their position using the `loc` (location) attribute.
 ```Python
 frame2.loc['three']
 
@@ -353,7 +353,7 @@ frame2.iloc[0:3, :]
 # uses numerical index values to retrieve first four rows
 ```
 
-Let's say we wanted to manually assign the values in a particular column, for example the `debt` missing data column.
+67. Let's say we wanted to manually assign the values in a particular column, for example the `debt` missing data column.
 ```Python
 frame2['debt'] = 16.5
 
@@ -362,9 +362,9 @@ frame2
 # returns frame2 DataFrame with newly-assigned 16.5 value for all rows in debt column
 ```
 
-We could also manually insert values for specific rows using their index labels.
+68. We could also manually insert values for specific rows using their index labels.
 
-If we wanted to add debt values for rows two, four, and five:
+69. If we wanted to add debt values for rows two, four, and five:
 ```Python
 # variable with Series object
 val = pd.Series([-1.2, -1.5, -1.7], index=['two', 'four', 'five'])
@@ -376,9 +376,9 @@ frame2['debt'] = val
 frame2
 ```
 
-We now see the modified `debt` values for the rows specified in the `index=` portion of our code.
+70. We now see the modified `debt` values for the rows specified in the `index=` portion of our code.
 
-We can remove a column using the `del` keyword.
+71. We can remove a column using the `del` keyword.
 ```Python
 del frame2['debt']
 
@@ -388,7 +388,7 @@ frame2.columns
 # result will be 'year', 'state', and 'pop'
 ```
 
-We can also pass a nested dictionary to a DataFrame.
+72. We can also pass a nested dictionary to a DataFrame.
 
 ```Python
 # assign nested dictionary to variable
@@ -402,17 +402,17 @@ frame3 = pd.DataFrame(pop)
 frame3
 ```
 
-`pandas` interprets the outer dict keys as column names and inner keys as row names.
+73. `pandas` interprets the outer dict keys as column names and inner keys as row names.
 
 # From structured data file to `DataFrame`
 
-As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`.
+74. As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`.
 
-For this section of the lab, we're going to work with data about *Titanic* passengers.
+75. For this section of the lab, we're going to work with data about *Titanic* passengers.
 
-Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.csv in a web browser to see the dataset.
+76. Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.csv in a web browser to see the dataset.
 
-We can load structured data into Python from a file located on our computer or from a URL, using `pd.read_csv()`.
+77. We can load structured data into Python from a file located on our computer or from a URL, using `pd.read_csv()`.
 ```Python
 # import pandas
 import pandas as pd
@@ -430,11 +430,11 @@ titanic = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro
 titanic.head(5)
 ```
 
-`pandas` provides the `read_csv()` function which stores `.csv` data as a `pandas` `DataFrame`.
+78. `pandas` provides the `read_csv()` function which stores `.csv` data as a `pandas` `DataFrame`.
 
-This `read_` prefix can be used with other structured data file formats, as we'll explore with JSON later.
+79. This `read_` prefix can be used with other structured data file formats, as we'll explore with JSON later.
 
-Other parsing functions in `pandas`:
+80. ther parsing functions in `pandas`:
 - `read_fwf`: fixed-width data with no delimiter
 - `read_clipboard`: reads in data from clipboard
 - `read_excel`: reads in data from `.xls` or `.xlsx` files
@@ -444,32 +444,32 @@ Other parsing functions in `pandas`:
 - `read_sas`: reads in SAS dataset
 - `read_stata`: reads in Stata file format
 
-To check the first and last five rows of the `titanic` data frame:
+81. To check the first and last five rows of the `titanic` data frame:
 ```Python
 titanic
 ```
 
-We can also check the data type for each column using `.dtypes`.
+82. We can also check the data type for each column using `.dtypes`.
 ```Python
 titanic.dtypes
 ```
 
-From this output, we know we have integers (`int64`), floats (`float64`), and strings (`object`).
+83. From this output, we know we have integers (`int64`), floats (`float64`), and strings (`object`).
 
-Maybe we want a more technical summary of this `DataFrame`.
+84. Maybe we want a more technical summary of this `DataFrame`.
 ```Python
 titanic.info()
 ```
 
-`.info()` returns row numbers, the number of entries, column names, column data types, and the number of non-null values in each column. 
+85. `.info()` returns row numbers, the number of entries, column names, column data types, and the number of non-null values in each column. 
 
-We can see from the `Non-Null Count` values that some columns do have null or missing values.
+86. We can see from the `Non-Null Count` values that some columns do have null or missing values.
 
-`.info()` also tells us how much memory (RAM) is used to store this `DataFrame`.
+87. `.info()` also tells us how much memory (RAM) is used to store this `DataFrame`.
 
-Let's go through these same steps with JSON data scraped from Twitter.
+88. Let's go through these same steps with JSON data scraped from Twitter.
 
-To learn more about scraping Twitter data with Python, [visit the `twarc` package documentation](https://github.com/DocNow/twarc).
+89. To learn more about scraping Twitter data with Python, [visit the `twarc` package documentation](https://github.com/DocNow/twarc).
 
 ```Python
 import pandas as pd
@@ -493,18 +493,17 @@ ND_Twitter.dtypes
 ND_Twitter.info()
 ```
 
+90. In the titanic data example, the `read` operation was fairly straightforward. 
 
-In the titanic data example, the `read` operation was fairly straightforward. 
+91. The data being loaded contained headers and was formatted in a way we would expect for a `.csv` file.
 
-The data being loaded contained headers and was formatted in a way we would expect for a `.csv` file.
+92. But in many situations, data being loaded to a `DataFrame` will not conform to these formatting conventions.
 
-But in many situations, data being loaded to a `DataFrame` will not conform to these formatting conventions.
+93. Let's say we have a file that does not include a header row.
 
-Let's say we have a file that does not include a header row.
+94. `pandas` can assign default column names, or you can set them manually.
 
-`pandas` can assign default column names, or you can set them manually.
-
-The `titanic_no_header` file contains the same original data with the first row of column names removed.
+95. The `titanic_no_header` file contains the same original data with the first row of column names removed.
 
 ```Python
 # import pandas 
@@ -523,11 +522,11 @@ headless_titanic = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas
 headless_titanic
 ```
 
-Let's say you have a `.txt` file that does not incldue a character delimiter.
+96. Let's say you have a `.txt` file that does not incldue a character delimiter.
 
-`titanic.txt` is the same titanic data this time as tab-delimited values.
+97. `titanic.txt` is the same titanic data this time as tab-delimited values.
 
-We would need to specify how `pandas` should parse this data as rows and columns.
+98. We would need to specify how `pandas` should parse this data as rows and columns.
 
 ```Python
 # import pandas
@@ -540,11 +539,11 @@ titanic_txt = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-i
 titanic_txt
 ```
 
-We can also run into situations where the data we are loading into Python has missing values.
+99. We can also run into situations where the data we are loading into Python has missing values.
 
-Just trying to load a file with missing data will return error messages.
+100. Just trying to load a file with missing data will return error messages.
 
-We can specify what characters representing missing data when we create the `DataFrame`.
+101. We can specify what characters representing missing data when we create the `DataFrame`.
 
 ```Python
 # import pandas
@@ -561,7 +560,7 @@ null_symbols = {'column1': ['NA'], 'column2': ['Null']}
 sample2 = pd.read_csv("file_2_name.csv", na_values=null_symbols)
 ```
 
-`pd.read_csv` includes other function arguments that can help with other common data formatting issues.
+102. `pd.read_csv` includes other function arguments that can help with other common data formatting issues.
 
 Argument | Description
 --- | ---
@@ -580,7 +579,7 @@ Argument | Description
 `encoding` | Specifies encoding schema
 `thousands` | Specifies `,` or `.` separater for thousands
 
-Other elements of `.csv` dialect we might encounter when loading a file to a `DataFrame`:
+103. Other elements of `.csv` dialect we might encounter when loading a file to a `DataFrame`:
 
 Argument | Description
 --- | ---
@@ -592,20 +591,20 @@ Argument | Description
 
 ## From `DataFrame` to data file
 
-Let's say we have data in a `DataFrame` and want to write that to a file.
+104. Let's say we have data in a `DataFrame` and want to write that to a file.
 
-While `.read_` loads data, `.to_` writes data.
+105. While `.read_` loads data, `.to_` writes data.
 
-To save the titanic data as an Excel file:
+106. To save the titanic data as an Excel file:
 ```Python
 titanic.to_excel("titanic.xlsx", sheet_name="passengers", index=False)
 ```
 
-In this example, we create a new Excel file with a single sheet (`passengers`) that stores the data from our `titanic` `DataFrame`.
+107. In this example, we create a new Excel file with a single sheet (`passengers`) that stores the data from our `titanic` `DataFrame`.
 
-`index=False` means that row index labels are not included in the new spreadsheet.
+108. `index=False` means that row index labels are not included in the new spreadsheet.
 
-We could load back in the new Excel file and write it to a `.csv` file, dropping the header row:
+109. We could load back in the new Excel file and write it to a `.csv` file, dropping the header row:
 ```Python
 
 # load Excel file as dataframe
@@ -619,11 +618,11 @@ titanic_excel.to_csv("titanic_no_head.csv", header=False)
 
 ## Sorting
 
-`pandas` includes a few different built-in sorting operations.
+110. `pandas` includes a few different built-in sorting operations.
 
-We can sort by an index for either axis of our `DataFrame` (i.e. we can sort based on row index labels or by column name).
+111. We can sort by an index for either axis of our `DataFrame` (i.e. we can sort based on row index labels or by column name).
 
-Going back to our Titanic passenger data, let's say we wanted to sort by passenger age.
+112. Going back to our Titanic passenger data, let's say we wanted to sort by passenger age.
 
 ```Python
 # import pandas
@@ -639,16 +638,16 @@ titanic.head(5)
 titanic.sort_values(by="Age").head()
 ```
 
-The default for `.sort_values` is to sort in ascending order.
+113. The default for `.sort_values` is to sort in ascending order.
 
-We can use `ascending=False` to sort in descending order.
+114. We can use `ascending=False` to sort in descending order.
 ```Python
 titanic.sort_values(by=['Age'], ascending=False)
 ```
 
-NOTE: When sorting, we are returning a sorted `DataFrame`. We ARE NOT updating the `DataFrame` in place. 
+115. NOTE: When sorting, we are returning a sorted `DataFrame`. We ARE NOT updating the `DataFrame` in place. 
 
-We have a couple of options to sort in place.
+116. We have a couple of options to sort in place.
 ```Python
 # create new dataframe with sorted results
 titanic_by_age = titanic.sort_values(by="Age")
@@ -663,30 +662,30 @@ titanic.sort_values(['Age'], inplace=True)
 titanic.head()
 ```
 
-We can also sort by multiple fields.
+117. We can also sort by multiple fields.
 
-To sort by class cabin and age, in descending order:
+118. To sort by class cabin and age, in descending order:
 ```Python
 titanic.sort_values(by=['Pclass', 'Age'], ascending=False).head()
 ```
 
-When sorting by fields with string data, `a-z` is considered `ascending` and `z-a` would be `descending`.
+119. When sorting by fields with string data, `a-z` is considered `ascending` and `z-a` would be `descending`.
 
 ## Subsetting
 
 ### Select
 
-To review, we can select specific columns from a `DataFrame`. 
+120. To review, we can select specific columns from a `DataFrame`. 
 ```Python
 # creates Series object with age values
 ages = titanic["Age"]
 ```
 
-We can use `[" "]` to select a specific single column of interest. 
+121. We can use `[" "]` to select a specific single column of interest. 
 
-Python returns this single column's data as a `Series` object.
+122. Python returns this single column's data as a `Series` object.
 
-We can also create a new data frame based on multiple columns.
+123. We can also create a new data frame based on multiple columns.
 ```Python
 # selects multiple columns to form new dataframe
 age_sex = titanic[["Age", "Sex"]]
@@ -695,19 +694,19 @@ age_sex = titanic[["Age", "Sex"]]
 age_sex.head()
 ```
 
-When selecting multiple columns, the inner brackets (`[]`) define the column names to subset or select.
+124. When selecting multiple columns, the inner brackets (`[]`) define the column names to subset or select.
 
-The outer brackets select data from a dataframe.
+125. The outer brackets select data from a dataframe.
 
-In this multi-column example, `age_sex` is a `DataFrame` because it is a two-dimensional object.
+126. In this multi-column example, `age_sex` is a `DataFrame` because it is a two-dimensional object.
 
-For more on sorting operations in `pandas`, check out the package's ["Sorting" documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#sorting).
+127. For more on sorting operations in `pandas`, check out the package's ["Sorting" documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#sorting).
 
 ### Filter
 
-As with SQL, we can return rows in our `DataFrame` that meet specific conditions.
+128. As with SQL, we can return rows in our `DataFrame` that meet specific conditions.
 
-Let's say we wanted to create a new `DataFrame` only containing data for passengers older than 35 years.
+129. Let's say we wanted to create a new `DataFrame` only containing data for passengers older than 35 years.
 ```Python
 above_35 = titanic[titanic["Age"] > 35]
 
@@ -715,14 +714,14 @@ above_35 = titanic[titanic["Age"] > 35]
 above_35.head()
 ```
 
-We use brackets (`[]`) to set a condition rows must meet to be assigned to the new dataframe.
+130. We use brackets (`[]`) to set a condition rows must meet to be assigned to the new dataframe.
 
-If we just wanted to see whether rows meet this condition in the original `DataFrame`, we could just test for the condition without creating a new `DataFrame`.
+131. If we just wanted to see whether rows meet this condition in the original `DataFrame`, we could just test for the condition without creating a new `DataFrame`.
 ```Python
 titanic["Age"] > 35
 ```
 
-Maybe we want to create a new data frame containing data on passegers in cabin class 2 and 3.
+132. Maybe we want to create a new data frame containing data on passegers in cabin class 2 and 3.
 ```Python
 class_23 = titanic[titanic["Pclass"].isin([2, 3])]
 
@@ -730,65 +729,65 @@ class_23 = titanic[titanic["Pclass"].isin([2, 3])]
 class_23.head()
 ```
 
-The `isin()` conditional function on its own would return a `True` or `False` value.
+133. The `isin()` conditional function on its own would return a `True` or `False` value.
 
-By nesting the `isin()` function in brackets (`[]`), we are filtering rows based on rows  that meet the function critera, or return as `True` from this function.
+134. By nesting the `isin()` function in brackets (`[]`), we are filtering rows based on rows  that meet the function critera, or return as `True` from this function.
 
-We could also break out the chained or compound conditional statement using an `OR` operator, `|`.
+135. We could also break out the chained or compound conditional statement using an `OR` operator, `|`.
 ```Python
 class_23_alternate =  titanic[(titanic["Pclass"] == 2) | (titanic["Pclass"] == 3)]
 
 class_23_alternate.head()
 ```
 
-For more on Boolean indexing and the `isin()` function:
+136. For more on Boolean indexing and the `isin()` function:
 - ["Boolean indexing," Pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-boolean)
 - ["Indexing with isin," Pandas documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-basics-indexing-isin)
 
-We could also create a new dataframe with passenger data for only passengers that have a known age.
+137. We could also create a new dataframe with passenger data for only passengers that have a known age.
 ```Python
 age_known = titanic[titanic["Age"].notna()]
 
 age_known.head()
 ```
 
-`.notna()` is a conditional function that returns `True` for rows that do not have a `Null` value.
+138. `.notna()` is a conditional function that returns `True` for rows that do not have a `Null` value.
 
-For more on missing values and related functions, check out [the "Working with missing data" package documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data).
+139. For more on missing values and related functions, check out [the "Working with missing data" package documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data).
 
 ### Selecting specific rows and columns
 
-Selecting lets us isolate columns, and filtering identifies specific rows.
+140. Selecting lets us isolate columns, and filtering identifies specific rows.
 
-But we can imagine a scenario in which we would want to combine these elements.
+141. But we can imagine a scenario in which we would want to combine these elements.
 
-We might want to create a new dataframe containing only the names of passengers who are over 35 years old.
+142. We might want to create a new dataframe containing only the names of passengers who are over 35 years old.
 ```Python
 over_35_names = titanic.loc[titanic["Age"] > 35, "Name"]
 ```
 
-`.loc` identifies the rows we are writing to the new dataframe.
+143. `.loc` identifies the rows we are writing to the new dataframe.
 
-What we are passing to the `loc` operator includes the row filter condition (`titanic["Age"] > 35`) and the column we are writing to the new dataframe (`Name`).
+144. What we are passing to the `loc` operator includes the row filter condition (`titanic["Age"] > 35`) and the column we are writing to the new dataframe (`Name`).
 
-We can also select rows and columns based on their index position.
+145. We can also select rows and columns based on their index position.
 
-We could isolate rows 10-25 and columns 3-5 with the following expression:
+146. We could isolate rows 10-25 and columns 3-5 with the following expression:
 ```Python
 titanic.iloc[9:25, 2:5]
 ```
 
-We can also assign new values to our selection using `loc` or `iloc`.
+147. We can also assign new values to our selection using `loc` or `iloc`.
 
-`loc` isolates rows based on their value, while `iloc` isolates rows based on their index position or label.
+148. `loc` isolates rows based on their value, while `iloc` isolates rows based on their index position or label.
 
-Let's say we wanted to anonymize the first three names in the dataset.
+149. Let's say we wanted to anonymize the first three names in the dataset.
 
-We could do this using `titanic.iloc[0:3, 3] = "anonymous"`.
+150. We could do this using `titanic.iloc[0:3, 3] = "anonymous"`.
 
-Consult the ["Different choices for indexing"](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-choice) documentation for more on indexing options.
+151. Consult the ["Different choices for indexing"](https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#indexing-choice) documentation for more on indexing options.
 
-A few key takeaways:
+152. A few key takeaways:
 - We use square brackets `[]` to subset data.
 - We can specify single rows or columns, a list of rows/columns, or conditional expression within those brackets
 - Select specific rows and/or columns using `loc` when working with row/column names
@@ -797,16 +796,16 @@ A few key takeaways:
 
 ## Removing duplicates
 
-A useful place to start is identifying and removing any duplicate rows in a dataframe.
+153. A useful place to start is identifying and removing any duplicate rows in a dataframe.
 
-We can do this using a few key functions.
+154. We can do this using a few key functions.
 
-`.duplicated()` will return a `True` or `False` value indicating if a row is a duplicate of a previously occuring row.
+155. `.duplicated()` will return a `True` or `False` value indicating if a row is a duplicate of a previously occuring row.
 ```Python
 data_frame.duplicated()
 ```
 
-`.drop_duplicates()` will return a dataframe containing only rows that are not duplicated.
+156. `.drop_duplicates()` will return a dataframe containing only rows that are not duplicated.
 ```Python
 new_data_frame = old_data_frame.drop_duplicates()
 ```
@@ -815,55 +814,55 @@ new_data_frame = old_data_frame.drop_duplicates()
 
 ### `.dropna()`
 
-As mentioned previously, we can specify how `pandas` handles missing data, with arguments like `dropna`, `isnull`, and `notnull`.
+157. As mentioned previously, we can specify how `pandas` handles missing data, with arguments like `dropna`, `isnull`, and `notnull`.
 
-We can specify how `pandas` handles missing values when working with a data frame object.
+158. We can specify how `pandas` handles missing values when working with a data frame object.
 
-To drop any row containing a missing value:
+159. To drop any row containing a missing value:
 ```Python
 no_na = data_frame.dropna()
 ```
 
-To drop any column containing a missing value, we can specify the axis:
+160. To drop any column containing a missing value, we can specify the axis:
 ```Python
 no_na_columns = data_frame.dropna(axis=1, how='all')
 ```
 ### `.fillna`
 
-But we can imagine a scenario in which you don't want to filter out missing data.
+161. But we can imagine a scenario in which you don't want to filter out missing data.
 
-The `.fillna()` function will replace missing data with a specified value.
+162. The `.fillna()` function will replace missing data with a specified value.
 
-The default function will replace all missing data in the dataframe:
+163. The default function will replace all missing data in the dataframe:
 ```Python
 # replaces all missing data with 0
 df.fillna(0)
 ```
 
-But we can also specify a different missing fill value for specific columns using a dictionary.
+164. But we can also specify a different missing fill value for specific columns using a dictionary.
 ```Python
 # replace missing data in column 1 with 0.5 value and in column 2 with 0
 df.fillna({1: 0.5, 2: 0})
 ```
 
-In these examples, `.fillna()` returns a new object, but we can also modify the existing object in-place by setting `inplace` to `True`.
+165. In these examples, `.fillna()` returns a new object, but we can also modify the existing object in-place by setting `inplace` to `True`.
 ```Python
 # modify existing object in-place
 df.fillna(0, inplace=True)
 ```
 
-We can also copy (or propogate) the last valid observation into missing data using specific methods that go along with `.fillna()`.
+166. We can also copy (or propogate) the last valid observation into missing data using specific methods that go along with `.fillna()`.
 
-Fill Forward (`ffill`) will take the "last known value" and apply it to missing data entries, until you hit the next non-null observation in the data frame.
+167. Fill Forward (`ffill`) will take the "last known value" and apply it to missing data entries, until you hit the next non-null observation in the data frame.
 
-Back Fill (`bfill`) goes the other direction, starting from the last row in the dataset. The "last known value" is applied to missing data entries until you hit the next non-null observation.
+168. Back Fill (`bfill`) goes the other direction, starting from the last row in the dataset. The "last known value" is applied to missing data entries until you hit the next non-null observation.
 
-To use forward fill on all missing values in a dataframe:
+169. To use forward fill on all missing values in a dataframe:
 ```Python
 df.fillna(method='ffill')
 ```
 
-To use back fill on all missing values in a dataframe:
+170. To use back fill on all missing values in a dataframe:
 ```Python
 df.fillna(method='bfill')
 ```
