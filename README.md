@@ -17,7 +17,7 @@ Information and exercises in this lab are adapted from the following resources:
 
 # Table of Contents
 
-- [What do we mean by` pandas`](#what-do-we-mean-by-pandas)
+- [What do we mean by `pandas`](#what-do-we-mean-by-pandas)
 - [Data structures in `pandas`](#data-structures-in-pandas)
   * [`Series`](#series)
   * [`DataFrame`](#dataframe)
@@ -117,7 +117,7 @@ obc
 
 28. We created a `Series` object containing four integer values.
 
-29. When working in `pandas`, most commands begin with `pd.`.
+29. When working in `pandas`, most commands begin with `pd.`
 
 30. We could create a list with these values, but for data analysis we needed the functionality `pandas` provides for working with series.
 
@@ -254,6 +254,17 @@ obj4
 
 48. The output for `obj4` now reflects our newly-assigned `name` attribute values.
 
+<blockquote>Q1: Describe a Series object in your own words.</blockquote>
+
+<blockquote>Q2: Create your own Series object. Write code the accomplishes the following tasks. Include code + comments.
+ <ul>
+  <li>Assign unique index attributes for each series value</li>
+  <li>Access a series value(s) using the index label</li>
+  <li>Perform at least two unique arithmetic operations on the Series</li>
+  <li>Test for null values in your series</li>
+ </ul>
+ </blockquote>
+ 
 ## `DataFrame`
 
 49. While a `Series` object is a one-dimensional array, a `DataFrame` includes a tabular data structure "and contains an ordered collection of columns, each of which can be a different value type" (McKinney, 130).
@@ -404,6 +415,18 @@ frame3
 
 73. `pandas` interprets the outer dict keys as column names and inner keys as row names.
 
+<blockquote>Q3: Describe a DataFrame in your own words.</blockquote>
+
+<blockquote>Q4: Create your own small DataFrame. Write code that accomplishes the following tasks. Include code + comments.
+ <ul>
+  <li>Change the original column order</li>
+  <li>Select a specific column(s) using its index label or name attribute</li>
+  <li>Select a specific row(s) using its index label or index value</li>
+  <li>Remove a column from the DataFrame</li>
+  <li>Determine summary statistics for values in the DataFrame</li>
+ </ul>
+ </blockquote>
+
 # From structured data file to `DataFrame`
 
 74. As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`.
@@ -434,7 +457,7 @@ titanic.head(5)
 
 79. This `read_` prefix can be used with other structured data file formats, as we'll explore with JSON later.
 
-80. ther parsing functions in `pandas`:
+80. Other parsing functions in `pandas`:
 - `read_fwf`: fixed-width data with no delimiter
 - `read_clipboard`: reads in data from clipboard
 - `read_excel`: reads in data from `.xls` or `.xlsx` files
@@ -466,6 +489,15 @@ titanic.info()
 86. We can see from the `Non-Null Count` values that some columns do have null or missing values.
 
 87. `.info()` also tells us how much memory (RAM) is used to store this `DataFrame`.
+
+<blockquote>Q5: Write code that loads in a different CSV file as a DataFrame and accomplishes each of the following tasks. Include code + comments.
+ <ul>
+  <li>Shows the first five rows</li>
+  <li>Shows the last five rows</li>
+  <li>Checks the data types for each column</li>
+  <li>Returns a technical summary for the DataFrame</li>
+ </ul>
+ </blockquote> 
 
 88. Let's go through these same steps with JSON data scraped from Twitter.
 
@@ -588,6 +620,14 @@ Argument | Description
 `skippinitialspace` | Instructs program to ignore whitespace after delimiter; default is `False`
 `doublequote` | Specifies how to handle quoting character within a field
 `escapechar` | Specifies the string used to escape the delimiter character if `quoting` is set to `QUOTE_NONE`
+
+<blockquote>Q6: Write code that loads in a structured data file that uses a pipe symbol (|) as a delimiter. Include code + comments.</blockquote>
+ 
+<blockquote>Q7: Write code that loads in structured data file in which missing data values are represented by "?", "??", and "-" characters. Include code + comments.</blockquote>
+
+<blockquote>Q8: Write code that ignores the last 6 rows of a structured data file. Include code + comments.</blockquote>
+
+<blockquote>Q9: Write code that parses a structured data file in which commas "," are used as a thousands separator. Include code + comments.</blockquote>
 
 ## From `DataFrame` to data file
 
@@ -867,10 +907,66 @@ df.fillna(method='ffill')
 df.fillna(method='bfill')
 ```
 
+<blockquote>Q10: Using the DataFrame you created for Q5, write code that executes AT LEAST FOUR of the following tasks. Include code + comments.
+ <ul>
+  <li>Sorts a column by ascending values</li>
+  <li>Sorts a column by descending values</li>
+  <li>Selects a specific column in the DataFrame</li>
+  <li>Creates a new DataFrame with select columns from existing DataFrame</li>
+  <li>Uses a comparison operator to filter rows in the DataFrame</li>
+  <li>Uses an isin statement to filter rows in the DataFrame</li>
+  <li>Selects specific rows and columns</li>
+  <li>Removes duplicate rows</li>
+  <li>Removes rows with missing values</li>
+  <li>Fills missing values using .fillna, ffill, or bfill</li>
+ </ul>
+ </blockquote>
+ 
 # Practice Problems
 
 No practice problems. Spend this time working on the final project.
 
 # Lab Notebook Questions
 
-Whatever questions are here + something related to final project
+Q1: Describe a Series object in your own words.
+
+Q2: Create your own Series object. Write code the accomplishes the following tasks. Include code + comments.
+- Assign unique index attributes for each series value
+- Access a series value(s) using the index label
+- Perform at least two unique arithmetic operations on the Series
+- Test for null values in your series
+
+Q3: Describe a DataFrame in your own words.
+
+Q4: Create your own small DataFrame. Write code that accomplishes the following tasks. Include code + comments.
+- Change the original column order
+- Select a specific column(s) using its index label or name attribute
+- Select a specific row(s) using its index label or index value
+- Remove a column from the DataFrame
+- Determine summary statistics for values in the DataFrame
+
+Q5: Write code that loads in a different CSV file as a DataFrame and accomplishes each of the following tasks. Include code + comments.
+- Shows the first five rows
+- Shows the last five rows
+- Checks the data types for each column
+- Returns a technical summary for the DataFrame
+
+Q6: Write code that loads in a structured data file that uses a pipe symbol (|) as a delimiter. Include code + comments.
+ 
+Q7: Write code that loads in structured data file in which missing data values are represented by "?", "??", and "-" characters. Include code + comments.
+
+Q8: Write code that ignores the last 6 rows of a structured data file. Include code + comments.
+
+Q9: Write code that parses a structured data file in which commas "," are used as a thousands separator. Include code + comments
+
+Q10: Using the DataFrame you created for Q5, write code that executes AT LEAST FOUR of the following tasks. Include code + comments.
+- Sorts a column by ascending values
+- Sorts a column by descending values
+- Selects a specific column in the DataFrame
+- Creates a new DataFrame with select columns from existing DataFrame
+- Uses a comparison operator to filter rows in the DataFrame
+- Uses an isin statement to filter rows in the DataFrame
+- Selects specific rows and columns
+- Removes duplicate rows
+- Removes rows with missing values
+- Fills missing values using .fillna, ffill, or bfill
