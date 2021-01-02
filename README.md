@@ -1,4 +1,4 @@
-# Lab #9: Introduction to Pandas
+# Introduction to Pandas
 
 <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" alt="Creative Commons License" /></a>
 This tutorial is licensed under a <a href="http://creativecommons.org/licenses/by-nc/4.0/" rel="license">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
@@ -7,15 +7,34 @@ This tutorial is licensed under a <a href="http://creativecommons.org/licenses/b
 
 ## Acknowledgements
 
-Adapted from `pandas` package ["Getting started"](https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/) documentation.
-
-Also Wes McKinney Python for Data Analysis chapters
-Chapter 5 "Getting Started with pandas" (125-168)
-Chapter 7 "Data Cleaning and Preparation" (195-224)
-Chapter 8 "Data Wrangling: Join, Combine, and Reshape" (225-256)
-Chapter 10 "Data Aggregation and Group Operations" (293-322)
+Information and exercises in this lab are adapted from the following resources:
+- `pandas` package ["Getting started"](https://pandas.pydata.org/pandas-docs/stable/getting_started/intro_tutorials/) documentation.
+- Wes McKinney's [*Python for Data Analysis: Data Wrangling With pandas, Numpy, and IPython*](https://www.oreilly.com/library/view/python-for-data/9781491957653/) (O'Reilly, 2017)
+  * Chapter 5 "Getting Started with pandas" (125-168)
+  * Chapter 7 "Data Cleaning and Preparation" (195-224)
+  * Chapter 8 "Data Wrangling: Join, Combine, and Reshape" (225-256)
+  * Chapter 10 "Data Aggregation and Group Operations" (293-322)
 
 # Table of Contents
+
+- [What do we mean by` pandas`](#what-do-we-mean-by-pandas)
+- [Data structures in `pandas`](#data-structures-in-pandas)
+  * [`Series`](#series)
+  * [`DataFrame`](#dataframe)
+- [From structured data file to `DataFrame`](#from-structured-file-to-dataframe)
+  * [From `DataFrame` to data file](#from-dataframe-to-data-file)
+- [Interacting with a `DataFrame`](#interacting-with-a-dataframe)
+  * [Sorting](#sorting)
+  * [Subsetting](#subsetting)
+    * [Select](#select)
+    * [Filter](#filter)
+    * [Selecting specific rows and columns](#selecting-specific-rows-and-columns)
+  * [Removing duplicates](#removing-duplicates)
+  * [Handling missing data](#handling-missing-data)
+    * [`.dropna()`](#dropna)
+    * [`.fillna()`](#fillna)
+- [Practice Problems](#practice-problems)
+- [Lab Notebook Questions](#lab-notebook-questions)
 
 # What do we mean by pandas
 
@@ -53,8 +72,6 @@ The name `pandas` is also a play on "Python data analysis."
 
 For more on the history and origins of `pandas`, check out Wes McKinney's "[pandas: a Foundational Python Library for Data Analysis and Statistics]"(https://www.dlr.de/sc/Portaldata/15/Resources/dokumente/pyhpc2011/submissions/pyhpc2011_submission_9.pdf) 2011 paper.
 
-What pandas lets us do
-
 `pandas` is based on and has some similarities with another Python package, `NumPy`.
 
 According to [package documentation](https://numpy.org/doc/stable/user/whatisnumpy.html), "`NumPy` is the fundamental package for scientific computing in Python. It is a Python library that provides a multidimensional array object, various derived objects (such as masked arrays and matrices), and an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more."
@@ -73,9 +90,7 @@ For more on `NumPy`:
 - ["NumPy Introduction," W3Schools](https://www.w3schools.com/python/numpy_intro.asp)
 - ["Introduction to NumPy Tutorial," Software Carpentry](https://software-carpentry.org/blog/2012/06/introduction-to-numpy-tutorial.html)
 
-Getting started with pandas
-
-# Data structures in pandas
+# Data structures in `pandas`
 
 `pandas` has two main data structures: `Series` and `DataFrame`.
 
@@ -575,7 +590,7 @@ Argument | Description
 `doublequote` | Specifies how to handle quoting character within a field
 `escapechar` | Specifies the string used to escape the delimiter character if `quoting` is set to `QUOTE_NONE`
 
-### From `DataFrame` to data file
+## From `DataFrame` to data file
 
 Let's say we have data in a `DataFrame` and want to write that to a file.
 
@@ -600,7 +615,7 @@ titanic_excel = pd.read_excel("titanic.xlsx", sheet_name="passengers")
 titanic_excel.to_csv("titanic_no_head.csv", header=False)
 ```
 
-# Interacting with a `dataframe`
+# Interacting with a `DataFrame`
 
 ## Sorting
 
@@ -741,7 +756,7 @@ age_known.head()
 
 For more on missing values and related functions, check out [the "Working with missing data" package documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/missing_data.html#missing-data).
 
-### Selecting Specific Rows and Columns
+### Selecting specific rows and columns
 
 Selecting lets us isolate columns, and filtering identifies specific rows.
 
@@ -780,7 +795,7 @@ A few key takeaways:
 - Select specific rows and/or columns usign `iloc` when working with index positions
 - You can assign new values to selection using `loc` or `iloc`
 
-## Removing Duplicates
+## Removing duplicates
 
 A useful place to start is identifying and removing any duplicate rows in a dataframe.
 
@@ -796,7 +811,7 @@ data_frame.duplicated()
 new_data_frame = old_data_frame.drop_duplicates()
 ```
 
-## Handling Missing Data
+## Handling missing data
 
 ### `.dropna()`
 
@@ -855,7 +870,7 @@ df.fillna(method='bfill')
 
 # Practice Problems
 
-Something related to final project
+No practice problems. Spend this time working on the final project.
 
 # Lab Notebook Questions
 
