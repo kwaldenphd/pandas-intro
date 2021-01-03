@@ -5,6 +5,19 @@ This tutorial is licensed under a <a href="http://creativecommons.org/licenses/b
 
 ## Lab Goals
 
+This lab covers the core components of `pandas`, including `Series` and `DataFrame` objects. It covers how to manually create and interact with `Series` and `DataFrame` objects in the Python programming environment. It covers loading a structured data file (CSV and JSON) as a `DataFrame`, and sorting, selecting, and filtering the resulting `DataFrame`. The lab also covers common data parsing and wrangling challenges like duplicate entries and missing data.
+
+By the end of this lab, students will be able to;
+- Understand the basic components of `Series` and `DataFrame` objects in `pandas`
+- Manually create `Series` and `DataFrame` objects in Python using `pandas`
+- Load a structured data file as a `DataFrame` in Python using `pandas`
+- Interact with a `DataFrame` using sorting, selecting, and filtering operations
+- Remove duplicate rows from a `DataFrame`
+- Understand how to approach common `DataFrame` parsing and loading errors using `pandas`
+- Understand the basic components of how to handle missing values in a `DataFrame`
+
+[Click here](https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/pandas-intro.ipynb) and select the "Save as" option to download this lab as a Jupyter Notebook.
+
 ## Acknowledgements
 
 Information and exercises in this lab are adapted from the following resources:
@@ -110,7 +123,7 @@ from pandas import Series, DataFrame
 obj = pd.Series([4, 7, -5, 3])
 
 # show obj Series 
-obc
+obj
 ```
 
 27. In this example, we imported the `pandas` package as well as the specific `Series` and `DataFrame` components of the module.
@@ -282,7 +295,7 @@ obj4
 55. Say we have two dictionaries that include equal-length lists:
 ```Python
 # create dictionary with three equal-length lists
-data = {'state': [Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada', Nevada'], 
+data = {'state': ['Ohio', 'Ohio', 'Ohio', 'Nevada', 'Nevada', 'Nevada'], 
         'year': [2000, 2001, 2002, 2001, 2002, 2003],
         'pop': [1.5, 1.7, 3.6, 2.4, 2.9, 3.2]}
 
@@ -323,7 +336,7 @@ frame.describe()
 
 61. Let's say we want to specify the column sequence or the order in which columns are arranged in the `DataFrame`:
 ```Python
-pd.DataFrame(data, columns=['year', 'state', 'pop']
+pd.DataFrame(data, columns=['year', 'state', 'pop'])
 ```
 
 62. What happens if we specify a column that isn't represented in the data passed to the `DataFrame`? 
@@ -447,7 +460,7 @@ titanic_file = pd.read_csv("titanic.csv")
 titanic_file.head(5)
 
 # load titanic data from url
-titanic = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/titanic.csv)
+titanic = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.csv")
 
 # show first 5 rows of newly-loaded dataframe
 titanic.head(5)
@@ -507,13 +520,13 @@ titanic.info()
 import pandas as pd
 
 # load data from JSON file
-ND_Twitter_file = read_json("ND_Twitter.json")
+ND_Twitter_file = pd.read_json("ND_Twitter.json")
 
 # show first and last five  rows of new data frame
 ND_Twitter_file
 
 # load data from url
-ND_Twitter = read_json("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/ND_Twitter.json")
+ND_Twitter = pd.read_json("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/ND_Twitter.json", lines=True)
 
 # show first and last five rows 
 ND_Twitter
@@ -542,13 +555,13 @@ ND_Twitter.info()
 import pandas as pd
 
 # load headless titanic data
-headless_titanic_default = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic_no_header.csv", header=None)
+headless_titanic_default = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic_no_header.csv", header=None)
 
 # shows us the default column names assigned by pandas
 headless_titanic_default
 
 # load headless titanic data and manually assign column names
-headless_titanic = read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic_no_header.csv", names=['PassengerID', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare' ,'Cabin', 'Embarked'])
+headless_titanic = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic_no_header.csv", names=['PassengerID', 'Survived', 'Pclass', 'Name', 'Sex', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare' ,'Cabin', 'Embarked'])
 
 # shows data frame with manually assigned column names
 headless_titanic
@@ -646,7 +659,6 @@ titanic.to_excel("titanic.xlsx", sheet_name="passengers", index=False)
 
 109. We could load back in the new Excel file and write it to a `.csv` file, dropping the header row:
 ```Python
-
 # load Excel file as dataframe
 titanic_excel = pd.read_excel("titanic.xlsx", sheet_name="passengers")
 
@@ -669,7 +681,7 @@ titanic_excel.to_csv("titanic_no_head.csv", header=False)
 import pandas as pd
 
 # load titanic data from url
-titanic = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/eda-pandas/main/data/titanic.csv)
+titanic = pd.read_csv("https://raw.githubusercontent.com/kwaldenphd/eda-pandas/main/data/titanic.csv")
 
 # show first 5 rows of newly-loaded dataframe
 titanic.head(5)
@@ -719,6 +731,9 @@ titanic.sort_values(by=['Pclass', 'Age'], ascending=False).head()
 ```Python
 # creates Series object with age values
 ages = titanic["Age"]
+
+# show new object
+ages
 ```
 
 121. We can use `[" "]` to select a specific single column of interest. 
@@ -804,6 +819,8 @@ age_known.head()
 142. We might want to create a new dataframe containing only the names of passengers who are over 35 years old.
 ```Python
 over_35_names = titanic.loc[titanic["Age"] > 35, "Name"]
+
+over_35_names
 ```
 
 143. `.loc` identifies the rows we are writing to the new dataframe.
