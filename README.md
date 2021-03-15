@@ -18,6 +18,8 @@ By the end of this lab, students will be able to;
 
 [Click here](https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/pandas-intro.ipynb) and select the "Save as" option to download this lab as a Jupyter Notebook.
 
+[Link to lab overview video](https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8c1dfd5d-53aa-42ec-abee-acd70164b935) (Panopto, ND users).
+
 ## Acknowledgements
 
 Information and exercises in this lab are adapted from the following resources:
