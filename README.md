@@ -36,7 +36,7 @@ Information and exercises in this lab are adapted from the following resources:
 - [Data structures in `pandas`](#data-structures-in-pandas)
   * [`Series`](#series)
   * [`DataFrame`](#dataframe)
-- [From structured data file to `DataFrame`](#from-structured-file-to-dataframe)
+- [From structured data file to `DataFrame`](#from-structured-data-file-to-dataframe)
   * [From `DataFrame` to data file](#from-dataframe-to-data-file)
 - [Interacting with a `DataFrame`](#interacting-with-a-dataframe)
   * [Sorting](#sorting)
