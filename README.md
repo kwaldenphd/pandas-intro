@@ -37,6 +37,7 @@ Information and exercises in this lab are adapted from the following resources:
   * [`Series`](#series)
   * [`DataFrame`](#dataframe)
 - [From structured data file to `DataFrame`](#from-structured-data-file-to-dataframe)
+  * [Additional lab notebook questions on loading data](#additional-lab-notebook-questions-on-loading-data) 
   * [From `DataFrame` to data file](#from-dataframe-to-data-file)
 - [Interacting with a `DataFrame`](#interacting-with-a-dataframe)
   * [Sorting](#sorting)
@@ -48,7 +49,6 @@ Information and exercises in this lab are adapted from the following resources:
   * [Handling missing data](#handling-missing-data)
     * [`.dropna()`](#dropna)
     * [`.fillna()`](#fillna)
-- [Practice Problems](#practice-problems)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
 # What do we mean by pandas
@@ -950,10 +950,6 @@ df.fillna(method='bfill')
   <li>Fills missing values using .fillna, ffill, or bfill</li>
  </ul>
  </blockquote>
- 
-# Practice Problems
-
-No practice problems. Spend this time working on the final project.
 
 # Lab Notebook Questions
 
