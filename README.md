@@ -636,6 +636,16 @@ Argument | Description
 `doublequote` | Specifies how to handle quoting character within a field
 `escapechar` | Specifies the string used to escape the delimiter character if `quoting` is set to `QUOTE_NONE`
 
+## Additional Lab Notebook Questions on Loading Data
+
+For Q6-Q9, you **do not** need to write code that actually loads an existing data file. That is, the lab does not provide data files that include these structures/attributes.
+
+Write **sample code** that shows the syntax you would use to load a file with the structures/attributes described in the question.
+
+For example, your answers might look something like the code the accompanies step 101 in the lab procedure.
+
+HINT: Be prepared to reference and consult the additional `pd.read_csv` function arguments listed in steps 102-103.
+
 <blockquote>Q6: Write code that loads in a structured data file that uses a pipe symbol (|) as a delimiter. Include code + comments.</blockquote>
  
 <blockquote>Q7: Write code that loads in structured data file in which missing data values are represented by "?", "??", and "-" characters. Include code + comments.</blockquote>
