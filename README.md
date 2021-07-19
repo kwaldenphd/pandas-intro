@@ -414,22 +414,6 @@ frame2.columns
 # result will be 'year', 'state', and 'pop'
 ```
 
-72. We can also pass a nested dictionary to a DataFrame.
-
-```Python
-# assign nested dictionary to variable
-pop = {'Nevada': {2001: 2.4, 2002: 2.9}, 
-       'Ohio': {2000: 1.5, 2001: 1.7, 2002: 3.6}}
-       
-# passing the nested dictionary to a DataFrame
-frame3 = pd.DataFrame(pop)
-
-# return new DataFrame
-frame3
-```
-
-73. `pandas` interprets the outer dict keys as column names and inner keys as row names.
-
 <blockquote>Q3: Describe a DataFrame in your own words.</blockquote>
 
 <blockquote>Q4: Create your own small DataFrame. Write code that accomplishes the following tasks. Include code + comments.
@@ -444,13 +428,15 @@ frame3
 
 # From structured data file to `DataFrame`
 
-74. As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`.
+73. As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`.
 
-75. For this section of the lab, we're going to work with data about *Titanic* passengers.
+74. For this section of the lab, we're going to work with data about *Titanic* passengers.
 
-76. Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.csv in a web browser to see the dataset.
+75. Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.csv in a web browser to see the dataset.
 
-77. We can load structured data into Python from a file located on our computer or from a URL, using `pd.read_csv()`.
+76. We can load structured data into Python from a file located on our computer or from a URL, using `pd.read_csv()`.
+
+77. An example of how we would load the `titanic.csv` file in Python as a `Pandas` DataFrame:
 ```Python
 # import pandas
 import pandas as pd
