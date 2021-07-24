@@ -604,7 +604,7 @@ Argument | Description
 `dayfirst` | Specifies international date format (DD/MM/YYYY); `False` by default
 `date_parser` | Function used to parse dates
 `nrows` | Number of rows to read starting at the beginning of the file; especially helpful when only needing part of a large file
-`skip_footer` | Number of lines to ignore at the end of the file
+`skipfooter` | Number of lines to ignore at the end of the file
 `encoding` | Specifies encoding schema
 `thousands` | Specifies `,` or `.` separater for thousands
 
