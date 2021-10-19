@@ -935,6 +935,8 @@ df.fillna(method='bfill')
 
 # Lab Notebook Questions
 
+Submit two versions of your lab notebook on Canvas- a Jupyter Notebook (.ipynb) file and a PDF (a process we work through in an earlier lab).
+
 Q1: Describe a Series object in your own words.
 
 Q2: Create your own Series object. Write code the accomplishes the following tasks. Include code + comments.
