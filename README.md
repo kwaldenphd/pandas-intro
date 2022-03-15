@@ -16,6 +16,20 @@ By the end of this lab, students will be able to;
 - Understand how to approach common `DataFrame` parsing and loading errors using `pandas`
 - Understand the basic components of how to handle missing values in a `DataFrame`
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3965867c-06aa-4a87-b8b1-ad6b00256645">Lab overview</a></td>
+  </tr>
+  </table>
+  
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=b6c5cfc5-45ca-4133-880b-ae300137167b">Lecture/live coding playlist</a></td>
+  </tr>
+  </table>
+
 ## Acknowledgements
 
 Information and exercises in this lab are adapted from the following resources:
@@ -28,6 +42,8 @@ Information and exercises in this lab are adapted from the following resources:
 
 # Table of Contents
 
+- [Lecture and Live Coding](#lecture-and-live-coding)
+- [Lab Notebook Template](#lab-notebook-template)
 - [What do we mean by `pandas`](#what-do-we-mean-by-pandas)
 - [Data structures in `pandas`](#data-structures-in-pandas)
   * [`Series`](#series)
@@ -47,8 +63,46 @@ Information and exercises in this lab are adapted from the following resources:
     * [`.fillna()`](#fillna)
 - [Lab Notebook Questions](#lab-notebook-questions)
 
+[Link to lab procedure as a Jupyter Notebook](https://drive.google.com/file/d/1G8CUTdduufylzYED7CvKKvnQT-U1jFzU/view?usp=sharing)
+
+# Lecture and Live Coding
+
+Throughout this lab, you will see a Panopto icon at the start of select sections.
+
+This icon indicates there is lecture/live coding asynchronous content that accompanies this section of the lab. 
+
+You can click the link in the figure caption to access these materials (ND users only).
+
+Example:
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3965867c-06aa-4a87-b8b1-ad6b00256645">Lab overview</a></td>
+  </tr>
+  </table>
+  
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=b6c5cfc5-45ca-4133-880b-ae300137167b">Lecture/live coding playlist</a></td>
+  </tr>
+  </table>
+
+# Lab Notebook Template
+
+Lab notebook template:
+- [Jupyter Notebook](https://drive.google.com/file/d/1n0wgG7MpxDjuP_gwcSQlm1onxvYQkYTs/view?usp=sharing)
+
 # What do we mean by pandas
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=3965867c-06aa-4a87-b8b1-ad6b00256645">Pandas Intro</a></td>
+  </tr>
+  </table>
+  
 1. Some of you may be wondering why we are talking about pandas in a computer science course.
 
 2. What is a panda?
@@ -424,6 +478,13 @@ frame2.columns
 
 # From structured data file to `DataFrame`
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=5f1ed196-cb37-403f-9e19-ad8201622ce5">Reading and Writing Data Files With Pandas</a></td>
+  </tr>
+  </table>
+
 73. As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`.
 
 74. For this section of the lab, we're going to work with data about *Titanic* passengers.
@@ -661,6 +722,13 @@ titanic_excel.to_csv("titanic_no_head.csv", header=False)
 ```
 
 # Interacting with a `DataFrame`
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+  <td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=88e381ae-8154-42cb-8a19-ad8201622c21">Interacting With a DataFrame</a></td>
+  </tr>
+  </table>
 
 ## Sorting
 
@@ -934,6 +1002,9 @@ df.fillna(method='bfill')
  </blockquote>
 
 # Lab Notebook Questions
+
+Lab notebook template:
+- [Jupyter Notebook](https://drive.google.com/file/d/1n0wgG7MpxDjuP_gwcSQlm1onxvYQkYTs/view?usp=sharing)
 
 Submit two versions of your lab notebook on Canvas- a Jupyter Notebook (.ipynb) file and a PDF (a process we work through in an earlier lab).
 
