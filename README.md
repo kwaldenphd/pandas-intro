@@ -186,9 +186,9 @@ obj
 
 30. We could create a list with these values, but for data analysis we needed the functionality `pandas` provides for working with series.
 
-31. To verify `obj` is stored as an array-like object, we can use `obj.values` which should return `array([4, 7, -5, 3])`
+31. To verify `obj` is stored as an array-like object, we can use `pd.Series(obj).values` which should return `array([4, 7, -5, 3])`
 
-32. We can also get the index attributes for `obc` using `obj.index`, which should return `RangeIndex(start=0, stop=4, step=1)`.
+32. We can also get the index attributes for `obj` using `pd.Series(obj).index`, which should return `RangeIndex(start=0, stop=4, step=1)`.
 
 33. The default index attributes assigned to objects in an array are integers `0` through `N-1`, where `N` is the length of the data.
 
