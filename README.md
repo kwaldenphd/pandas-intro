@@ -76,7 +76,9 @@ That makes more sense.
 
 If you remember back to our earlier work with `.csv` files in Python, there are limitations to the kinds of things we can do with structured data using the `csv` module. Particularly if we want to analyze and visualze structured data in a Python programming environment, we aren't going to get very far loading `csv` files as lists or dictionaries. We need Python to understand or interact with structured data as structured data.
 
-Enter `pandas`! Software developers at AQR Capital Management began working on a Python-based tool (written in a combination of C and Python) for quantitative data analysis in 2008. The initial open-source version of `pandas` was released in 2008.
+## Enter `pandas`! 
+
+Software developers at AQR Capital Management began working on a Python-based tool (written in a combination of C and Python) for quantitative data analysis in 2008. The initial open-source version of `pandas` was released in 2008.
 
 At its core, "`pandas` is a software library written for the Python programming language for data manipulation and analysis. In particular, it offers data structures and operations for manipulating numerical tables and time series" ([Wikipedia](https://en.wikipedia.org/wiki/Pandas_(software)). The name `pandas` is derived from "panel data," an econometrics term used to describe particular types of datasets. The name `pandas` is also a play on "Python data analysis."
 
