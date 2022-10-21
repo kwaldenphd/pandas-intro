@@ -496,7 +496,7 @@ Argument | Description
 
 ### Application
 
-For Q6-Q9, you do not need to write code that actually loads an existing data file. That is, the lab does not provide data files that include these structures/attributes.
+For the Q6 programs, you do not need to write code that actually loads an existing data file. That is, the lab does not provide data files that include these structures/attributes.
 
 Write sample code that shows the syntax you would use to load a file with the structures/attributes described in the question.
 
@@ -504,13 +504,13 @@ For example, your answers might look something like the sample syntax shown in t
 
 HINT: Be prepared to reference and consult the additional pd.read_csv function arguments listed in the previous lab section's tables.
 
-Q6: Write code that loads in a structured data file that uses a pipe symbol (|) as a delimiter. Include code + comments.
+Q6A: Write code that loads in a structured data file that uses a pipe symbol (|) as a delimiter. Include code + comments.
  
-Q7: Write code that loads in structured data file in which missing data values are represented by "?", "??", and "-" characters. Include code + comments.
+Q6B: Write code that loads in structured data file in which missing data values are represented by "?", "??", and "-" characters. Include code + comments.
 
-Q8: Write code that ignores the last 6 rows of a structured data file. Include code + comments.
+Q6C: Write code that ignores the last 6 rows of a structured data file. Include code + comments.
 
-Q9: Write code that parses a structured data file in which commas "," are used as a thousands separator. Include code + comments
+Q6D: Write code that parses a structured data file in which commas "," are used as a thousands separator. Include code + comments
 
 # Interacting with a `DataFrame`
 
@@ -687,7 +687,7 @@ df.to_csv("df.csv", header=False, index=False)
 
 ## Application
 
-Q10A: Using the DataFrame you created for Q5, write code that executes AT LEAST FOUR of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
+Q7A: Using the DataFrame you created for Q5, write code that executes AT LEAST FOUR of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
 - Sorts a column by ascending values
 - Sorts a column by descending values
 - Selects a specific column in the DataFrame
@@ -696,7 +696,7 @@ Q10A: Using the DataFrame you created for Q5, write code that executes AT LEAST 
 - Uses an isin statement to filter rows in the DataFrame
 - Selects specific rows and columns
 
-Q10B: Write your modified `DataFrame` from Q10A to a `.csv` file. Your answer for these items should include a Python program + comments that document process and explain your code.
+Q7B: Write your modified `DataFrame` from Q7A to a `.csv` file. Your answer for these items should include a Python program + comments that document process and explain your code.
 
 # Other `DataFrame` Tasks
 
@@ -766,13 +766,13 @@ df.fillna(method='bfill')
 
 ## Application
 
-Q11A: Using the DataFrame you created for Q5 (and used in Q10), write code that executes AT LEAST ONE of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
+Q8A: Using the DataFrame you created for Q5 (and used in Q7), write code that executes AT LEAST ONE of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
 
 - Removes duplicate rows
 - Removes rows with missing values
 - Fills missing values using .fillna, ffill, or bfill
 
-Q11B: Write your modified `DataFrame` from Q11A to a `.csv` file. Your answer for these items should include a Python program + comments that document process and explain your code.
+Q8B: Write your modified `DataFrame` from Q8A to a `.csv` file. Your answer for these items should include a Python program + comments that document process and explain your code.
 
 # How to Submit This Lab (and show your work)
 
@@ -821,7 +821,7 @@ Q5: Write code that loads in a different `.csv` file as a DataFrame and accompli
 - Checks the data types for each column
 - Returns a technical summary for the DataFrame
 
-For Q6-Q9, you do not need to write code that actually loads an existing data file. That is, the lab does not provide data files that include these structures/attributes.
+For the Q6 programs, you do not need to write code that actually loads an existing data file. That is, the lab does not provide data files that include these structures/attributes.
 
 Write sample code that shows the syntax you would use to load a file with the structures/attributes described in the question.
 
@@ -829,16 +829,15 @@ For example, your answers might look something like the sample syntax shown in t
 
 HINT: Be prepared to reference and consult the additional pd.read_csv function arguments listed in the previous lab section's tables.
 
-Q6: Write code that loads in a structured data file that uses a pipe symbol (|) as a delimiter. Include code + comments.
+Q6A: Write code that loads in a structured data file that uses a pipe symbol (|) as a delimiter. Include code + comments.
  
-Q7: Write code that loads in structured data file in which missing data values are represented by "?", "??", and "-" characters. Include code + comments.
+Q6B: Write code that loads in structured data file in which missing data values are represented by "?", "??", and "-" characters. Include code + comments.
 
-Q8: Write code that ignores the last 6 rows of a structured data file. Include code + comments.
+Q6C: Write code that ignores the last 6 rows of a structured data file. Include code + comments.
 
-Q9: Write code that parses a structured data file in which commas "," are used as a thousands separator. Include code + comments
+Q6D: Write code that parses a structured data file in which commas "," are used as a thousands separator. Include code + comments
 
-Q10: Using the DataFrame you created for Q5, write code that executes AT LEAST FOUR of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
-
+Q7A: Using the DataFrame you created for Q5, write code that executes AT LEAST FOUR of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
 - Sorts a column by ascending values
 - Sorts a column by descending values
 - Selects a specific column in the DataFrame
@@ -847,8 +846,12 @@ Q10: Using the DataFrame you created for Q5, write code that executes AT LEAST F
 - Uses an isin statement to filter rows in the DataFrame
 - Selects specific rows and columns
 
-Q11: Using the DataFrame you created for Q5 (and used in Q10), write code that executes AT LEAST ONE of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
+Q7B: Write your modified `DataFrame` from Q7A to a `.csv` file. Your answer for these items should include a Python program + comments that document process and explain your code.
+
+Q8A: Using the DataFrame you created for Q5 (and used in Q7), write code that executes AT LEAST ONE of the following tasks. Your answer for these items should include a Python program + comments that document process and explain your code.
 
 - Removes duplicate rows
 - Removes rows with missing values
 - Fills missing values using .fillna, ffill, or bfill
+
+Q8B: Write your modified `DataFrame` from Q11A to a `.csv` file. Your answer for these items should include a Python program + comments that document process and explain your code.
