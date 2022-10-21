@@ -494,7 +494,7 @@ Argument | Description
 `doublequote` | Specifies how to handle quoting character within a field
 `escapechar` | Specifies the string used to escape the delimiter character if `quoting` is set to `QUOTE_NONE`
 
-## Application
+### Application
 
 For Q6-Q9, you do not need to write code that actually loads an existing data file. That is, the lab does not provide data files that include these structures/attributes.
 
