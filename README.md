@@ -62,7 +62,7 @@ If working in Google Colaboratory, submit the link to your notebook (checking sh
 
 # Overview
 
-<p align="center"><img src="https://github.com/kwaldenphd/pandas-intro/blob/main/images/Figure_2.png?raw=true" width="1000"></p>
+<p align="center"><img src="https://github.com/kwaldenphd/pandas-intro/blob/main/Figure_2.png?raw=true" width="1000"></p>
 
 Some of you may be wondering why we are talking about pandas in a Computer Science course....
 
