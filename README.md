@@ -62,7 +62,7 @@ If working in Google Colaboratory, submit the link to your notebook (checking sh
 
 # Overview
 
-<p align="center"><img src="https://github.com/kwaldenphd/pandas-intro/blob/main/Figure_2.png?raw=true" width="1000"></p>
+<p align="center"><img src="https://github.com/kwaldenphd/pandas-intro/blob/main/images/Peebo.png?raw=true" width="1000"></p>
 
 Some of you may be wondering why we are talking about pandas in a Computer Science course....
 
@@ -94,7 +94,7 @@ For more on `NumPy`:
 
 ## Data Structures in `pandas`
 
-DIAGRAM
+<p align="center"><img src="https://github.com/kwaldenphd/pandas-intro/blob/main/images/series_df_diagram.png?raw=true" width="1000"></p>
 
 `pandas` has two main data structures: `Series` and `DataFrame`.
 - "A `Series` is a one-dimensional, array-like object containing a sequence of values...and an associated array of data labels, called its index" (McKinney, 126)
