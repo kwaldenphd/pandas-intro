@@ -702,16 +702,12 @@ Q10B: Write your modified `DataFrame` from Q10A to a `.csv` file. Your answer fo
 
 ## Removing Duplicates
 
-153. A useful place to start is identifying and removing any duplicate rows in a dataframe.
-
-154. We can do this using a few key functions.
-
-155. `.duplicated()` will return a `True` or `False` value indicating if a row is a duplicate of a previously occuring row.
+A useful place to start is identifying and removing any duplicate rows in a dataframe. We can do this using a few key functions. `.duplicated()` will return a `True` or `False` value indicating if a row is a duplicate of a previously occuring row.
 ```Python
 data_frame.duplicated()
 ```
 
-156. `.drop_duplicates()` will return a dataframe containing only rows that are not duplicated.
+`.drop_duplicates()` will return a dataframe containing only rows that are not duplicated.
 ```Python
 new_data_frame = old_data_frame.drop_duplicates()
 ```
