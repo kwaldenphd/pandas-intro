@@ -15,6 +15,13 @@ By the end of this lab, students will be able to;
 - Understand how to approach common `DataFrame` parsing and loading errors using `pandas`
 - Understand the basic components of how to handle missing values in a `DataFrame`
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=da5b8c14-e546-44fd-8f65-af36014781ce">Lecture/live coding playlist</a></td>
+  </tr>
+  </table>
+
 ## Acknowledgements
 
 Information and exercises in this lab were developed in consultation with the following resources:
@@ -26,7 +33,7 @@ Information and exercises in this lab were developed in consultation with the fo
   * Chapter 10 "Data Aggregation and Group Operations" (293-322)
 
 # Table of Contents
-
+- [Lecture & Live Coding](#lecture--live-coding)
 - [Lab Notebook Template](#lab-notebook-template)
 - [Overview](#overview)
 - [Data Structures in `pandas`](#data-structures-in-pandas)
@@ -38,6 +45,23 @@ Information and exercises in this lab were developed in consultation with the fo
 
 [Click here](https://colab.research.google.com/drive/1rB4f9NsbjbmOTwriFcdFwqNYlhbQCJjz?usp=sharing) to access the lab procedure as a Jupyter Notebook (Google Colab, ND Users)
 
+# Lecture & Live Coding
+
+Throughout this lab, you will see a Panopto icon at the start of select sections.
+
+This icon indicates there is lecture/live coding asynchronous content that accompanies this section of the lab. 
+
+You can click the link in the figure caption to access these materials (ND users only).
+
+Example:
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?pid=da5b8c14-e546-44fd-8f65-af36014781ce">Lecture/live coding playlist</a></td>
+  </tr>
+  </table>
+  
 ## Lab Notebook Template
 
 [Click here](https://colab.research.google.com/drive/1sKrGhGa_uvJw7l4QiKGKP-X_sAMlcQrq?usp=sharing) to access the lab notebook template as a Jupyter Notebook (Google Colab, ND Users)
@@ -61,6 +85,13 @@ If working in JupyterLab or another desktop IDE, upload the lab notebook templat
 If working in Google Colaboratory, submit the link to your notebook (checking sharing permissions, similar with Google Docs) AS WELL AS the `.ipyb` file
 
 # Overview
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=1a39dca8-2d61-4f20-b6e8-af360144f447">Overview</a></td>
+  </tr>
+  </table>
 
 <p align="center"><img src="https://github.com/kwaldenphd/pandas-intro/blob/main/images/Peebo.png?raw=true" width="1000"></p>
 
@@ -103,6 +134,13 @@ For more on `NumPy`:
 - A `DataFrame` includes a tabular data structure "and contains an ordered collection of columns, each of which can be a different value type" (McKinney, 130).
 
 ### `Series`
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a6057ced-9dd1-426c-a063-af360146b0dd">Series</a></td>
+  </tr>
+  </table>
 
 In `pandas`, "a `Series` is a one-dimensional, array-like object containing a sequence of values...and an associated array of data labels, called its index" (McKinney, 126). At first glance, a `Series` looks a lot like a Python list.
 
@@ -259,6 +297,13 @@ Q2: Create your own `Series` object. Write code the accomplishes the following t
 
 ### `DataFrame`
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=96293510-c88d-4444-a8d0-af360146c587">DataFrame</a></td>
+  </tr>
+  </table>
+
 While a `Series` object is a one-dimensional array, a `DataFrame` includes a tabular data structure "and contains an ordered collection of columns, each of which can be a different value type" (McKinney, 130). A `pandas` `DataFrame` has a row and column index--we can think of these as Series that all share the same index. Behold, a two-dimensional data structure!
 
 In most situations, you'll create a `DataFrame` by reading in a structured data file. But we're going to manually create a `DataFrame` to better understand how they work in `pandas`. Let's go back to our state population data example. Say we have two dictionaries that include equal-length lists:
@@ -390,6 +435,13 @@ Q4: Create your own small DataFrame. Write code that accomplishes the following 
 
 # From Data File to `DataFrame`
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=01168562-ebe4-4516-89ef-af3601451832">From Data File to DataFrame</a></td>
+  </tr>
+  </table>
+
 As mentioned earlier in this lab, it's far more likely that you will load structured data from a file into Python, rather than manually creating a `DataFrame`. For this section of the lab, we're going to work with data about *Titanic* passengers. Navigate to https://raw.githubusercontent.com/kwaldenphd/pandas-intro/main/data/titanic.csv in a web browser to see the dataset.
 
 We can load structured data into Python from a file located on our computer or from a URL, using `pd.read_csv()`. An example of how we would load the `titanic.csv` file in Python as a `Pandas` DataFrame:
@@ -447,6 +499,13 @@ Q5: Write code that loads in a different `.csv` file as a DataFrame and accompli
 - Returns a technical summary for the DataFrame
 
 ## Other Data Loading Challenges
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=7947cc62-3264-43da-afe4-af360147f936">Other Data Loading Challenges</a></td>
+  </tr>
+  </table>
 
 We can also run into situations where the data we are loading into Python has missing values. We can specify what characters representing missing data when we create the `DataFrame`.
 
@@ -516,6 +575,13 @@ Q6D: Write code that parses a structured data file in which commas "," are used 
 
 ## Sorting
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=480927f9-34c6-436d-8971-af360146f634">Sorting</a></td>
+  </tr>
+  </table>
+
 `pandas` includes a few different built-in sorting operations. We can sort by an index for either axis of our `DataFrame` (i.e. we can sort based on row index labels or by column name). Going back to our Titanic passenger data, let's say we wanted to sort by passenger age.
 
 ```Python
@@ -568,6 +634,13 @@ When sorting by fields with string data, `a-z` is considered `ascending` and `z-
 
 ### Select
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=b2805333-207c-4cc2-9238-af360146fd12">Select</a></td>
+  </tr>
+  </table>
+
 To review, we can select specific columns from a `DataFrame`. 
 ```Python
 # creates Series object with age values
@@ -592,6 +665,13 @@ When selecting multiple columns, the inner brackets (`[]`) define the column nam
 For more on sorting operations in `pandas`, check out the package's ["Sorting" documentation](https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html#sorting).
 
 ### Filter
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=9570d7eb-5363-4bca-89ef-af360147074d">Filter</a></td>
+  </tr>
+  </table>
 
 We can use Python's comparison operators to return rows in our `DataFrame` that meet specific conditions. Let's say we wanted to create a new `DataFrame` only containing data for passengers older than 35 years.
 
@@ -640,6 +720,13 @@ age_known.head()
 
 ### Selecting specific rows and columns
 
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=a2d95af5-1c38-427b-8251-af360147393c">Selecting Specific Rows & Columns</a></td>
+  </tr>
+  </table>
+
 Selecting lets us isolate columns, and filtering identifies specific rows. But we can imagine a scenario in which we would want to combine these elements. We might want to create a new dataframe containing only the names of passengers who are over 35 years old.
 ```Python
 over_35_names = titanic.loc[titanic["Age"] > 35, "Name"]
@@ -666,6 +753,13 @@ A few key takeaways:
 - You can assign new values to selection using `loc` or `iloc`
 
 ## From `DataFrame` to Data File
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=bbd847e6-f649-43fb-ad8c-af3601480776">Selecting From DataFrame to Data File</a></td>
+  </tr>
+  </table>
 
 Let's say we have data in a `DataFrame` and want to write that to a file. While `.read_` loads data, `.to_` writes data. 
 
@@ -699,6 +793,13 @@ Q7A: Using the DataFrame you created for Q5, write code that executes AT LEAST F
 Q7B: Write your modified `DataFrame` from Q7A to a `.csv` file. Your answer for these items should include a Python program + comments that document process and explain your code.
 
 # Other `DataFrame` Tasks
+
+<table>
+ <tr><td>
+<img src="https://elearn.southampton.ac.uk/wp-content/blogs.dir/sites/64/2021/04/PanPan.png" alt="Panopto logo" width="50"/></td>
+<td><a href="https://notredame.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=71580603-99cd-46f6-bfa3-af360147553e">Other DataFrame Tasks</a></td>
+  </tr>
+  </table>
 
 ## Removing Duplicates
 
